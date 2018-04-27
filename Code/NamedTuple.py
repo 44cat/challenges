@@ -75,3 +75,7 @@ class NamedTuple(tuple):
     x = _property(_itemgetter(0),doc='Alias for field number 0')
 
     y = _property(_itemgetter(1),doc='Alias for field number 1')
+
+print(NamedTuple(1,2))
+
+
