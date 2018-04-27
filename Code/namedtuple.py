@@ -78,21 +78,28 @@ class NamedTuple(tuple):
 
     y = _property(_itemgetter(1),doc='Alias for field number 1')
 
-p = collections.OrderedDict()
+# p = collections.OrderedDict()
+# fields = ['x','y']
+# values = [1,2]
+# if True:
+#     # update
+#     p.update(zip(fields,values))
+#     # print(p.pop('y'))
+#     x = p.pop('x')
+#     y = p.pop('y')
+#     nt = NamedTuple(x,y)
+
+
 fields = ['x','y']
 values = [1,2]
 if True:
-    # update
-    p.update(zip(fields,values))
-    # print(p.pop('y'))
-    x = p.pop('x')
-    y = p.pop('y')
-    nt = NamedTuple(x,y)
+    values = 1
+    fields = 2
+nt = NamedTuple(values,fields)
 
 # unittest
-
-print(nt[0])
-print(nt[1])
-print(nt.x)
-print(nt.y)
-print(repr(nt))
+# print(nt[0])
+# print(nt[1])
+# print(nt.x)
+# print(nt.y)
+# print(repr(nt))
