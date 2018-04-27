@@ -4,6 +4,7 @@ from operator import itemgetter as _itemgetter
 
 from collections import OrderedDict
 
+import collections
 
 class NamedTuple(tuple):
     'NamedTuple(x, y)'
@@ -70,12 +71,27 @@ class NamedTuple(tuple):
 
         'Exclude the OrderedDict from pickling'
 
+
         return None
 
     x = _property(_itemgetter(0),doc='Alias for field number 0')
 
     y = _property(_itemgetter(1),doc='Alias for field number 1')
 
-print(NamedTuple(1,2))
+p = collections.OrderedDict()
+files = ['x','y']
+values = [1,2]
+# update
+p.update(zip(files,values))
+# print(p.pop('y'))
+x = p.pop('x')
+y = p.pop('y')
+nt = NamedTuple(x,y)
 
+# unittest
 
+# print(nt[0])
+# print(nt[1])
+# print(nt.x)
+# print(nt.y)
+# print(repr(nt))
