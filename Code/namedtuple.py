@@ -90,13 +90,6 @@ class NamedTuple(tuple):
 #     nt = NamedTuple(x,y)
 
 
-fields = ['x','y']
-values = [1,2]
-if True:
-    values = 1
-    fields = 2
-nt = NamedTuple(values,fields)
-
 # unittest
 # print(nt[0])
 # print(nt[1])
